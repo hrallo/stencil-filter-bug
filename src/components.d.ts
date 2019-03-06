@@ -12,58 +12,88 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface MyCard {}
+  interface MyCardAttributes extends StencilHTMLAttributes {}
+
+  interface MyComponentBroken {}
+  interface MyComponentBrokenAttributes extends StencilHTMLAttributes {}
+
+  interface MyComponentWorking {}
+  interface MyComponentWorkingAttributes extends StencilHTMLAttributes {}
+
+  interface MyFilters {}
+  interface MyFiltersAttributes extends StencilHTMLAttributes {
+    'onUpdateEndDate'?: (event: CustomEvent) => void;
+    'onUpdateFilterTag'?: (event: CustomEvent) => void;
+    'onUpdateStartDate'?: (event: CustomEvent) => void;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
+
+  interface MyGrid {}
+  interface MyGridAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'MyCard': Components.MyCard;
+    'MyComponentBroken': Components.MyComponentBroken;
+    'MyComponentWorking': Components.MyComponentWorking;
+    'MyFilters': Components.MyFilters;
+    'MyGrid': Components.MyGrid;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'my-card': Components.MyCardAttributes;
+    'my-component-broken': Components.MyComponentBrokenAttributes;
+    'my-component-working': Components.MyComponentWorkingAttributes;
+    'my-filters': Components.MyFiltersAttributes;
+    'my-grid': Components.MyGridAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLMyCardElement extends Components.MyCard, HTMLStencilElement {}
+  var HTMLMyCardElement: {
+    prototype: HTMLMyCardElement;
+    new (): HTMLMyCardElement;
+  };
+
+  interface HTMLMyComponentBrokenElement extends Components.MyComponentBroken, HTMLStencilElement {}
+  var HTMLMyComponentBrokenElement: {
+    prototype: HTMLMyComponentBrokenElement;
+    new (): HTMLMyComponentBrokenElement;
+  };
+
+  interface HTMLMyComponentWorkingElement extends Components.MyComponentWorking, HTMLStencilElement {}
+  var HTMLMyComponentWorkingElement: {
+    prototype: HTMLMyComponentWorkingElement;
+    new (): HTMLMyComponentWorkingElement;
+  };
+
+  interface HTMLMyFiltersElement extends Components.MyFilters, HTMLStencilElement {}
+  var HTMLMyFiltersElement: {
+    prototype: HTMLMyFiltersElement;
+    new (): HTMLMyFiltersElement;
+  };
+
+  interface HTMLMyGridElement extends Components.MyGrid, HTMLStencilElement {}
+  var HTMLMyGridElement: {
+    prototype: HTMLMyGridElement;
+    new (): HTMLMyGridElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'my-card': HTMLMyCardElement
+    'my-component-broken': HTMLMyComponentBrokenElement
+    'my-component-working': HTMLMyComponentWorkingElement
+    'my-filters': HTMLMyFiltersElement
+    'my-grid': HTMLMyGridElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'my-card': HTMLMyCardElement;
+    'my-component-broken': HTMLMyComponentBrokenElement;
+    'my-component-working': HTMLMyComponentWorkingElement;
+    'my-filters': HTMLMyFiltersElement;
+    'my-grid': HTMLMyGridElement;
   }
 
 

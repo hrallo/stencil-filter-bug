@@ -1,0 +1,125 @@
+@import url('../../../node_modules/lightpick/css/lightpick.css');
+
+.material-icons {
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+my-filters {
+  padding: 20px 0 0;
+  background-color: #fafafa;
+  display: block;
+  width: 100%;
+  font-family: sans-serif;
+
+  .lightpick {
+    margin-bottom: 2em;
+  }
+
+  .lightpick--inlined {
+    position: absolute;
+  }
+
+  .lightpick__apply-action,
+  .lightpick__footer-message {
+    display: none;
+  }
+
+  .lightpick__footer {
+    justify-content: flex-end;
+  }
+
+  .lightpick__reset-action {
+    background-color: transparent;
+    color: #000000;
+    padding: 1em;
+    font-weight: bold;
+    order: 2;
+    font-size: 11px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .events_filters-wrapper {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  label {
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: .3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input[type='text'] {
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: .8em 1em;
+    width: 100%;
+    border: 1px solid #bdbdbd;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  input::placeholder {
+    color: #000000;
+  }
+
+  .filter_item {
+    flex: 1 0 33%;
+  }
+
+  .select_wrapper {
+    position: relative;
+
+    select {
+      font-size: 14px;
+      padding: .8em 1em;
+      width: 100%;
+      border: 1px solid #bdbdbd;
+      color: #000000;
+      min-width: 250px;
+      border-radius: 0;
+      background-color: #fff;
+      -webkit-appearance: none;
+      padding-right: 37px;
+    }
+
+    &:before {
+      font-family: 'Material Icons';
+      position: absolute;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      padding: .5em;
+      font-size: 24px;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      content: 'keyboard_arrow_down';
+      right: 0;
+    }
+
+  }
+
+  .row_gt-sm {
+    @media(min-width: 500px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .swell_all-sm {
+    padding: 10px 20px;
+  }
+
+}
