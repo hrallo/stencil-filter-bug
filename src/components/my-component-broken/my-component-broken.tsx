@@ -123,7 +123,6 @@ export class MyComponent {
       <my-grid>
         {this.getCardData().map(card => (
           <my-card slot="grid-item">
-            {/* only causes bug in pacsys components? */}
             {card['image'] ? <img slot="card-image" src={card['image']} /> : null}
 
             {card['eyebrowHeading'] ? (
