@@ -123,6 +123,7 @@ export class MyComponent {
       <my-grid>
         {this.getCardData().map(card => (
           <my-card slot="grid-item">
+            {/* conditional slots causing bug */}
             {card['image'] ? <img slot="card-image" src={card['image']} /> : null}
 
             {card['eyebrowHeading'] ? (
@@ -132,6 +133,14 @@ export class MyComponent {
             {card['heading'] ? <h1 slot="card-heading">{card['heading']}</h1> : null}
 
             {card['locationCopy'] ? <p slot="card-location">{card['locationCopy']}</p> : null}
+
+            {/* <img slot="card-image" src={card['image']} />
+
+            <h2 slot="card-eyebrow-heading">{card['eyebrowHeading']}</h2>
+
+            <h1 slot="card-heading">{card['heading']}</h1>
+
+            <p slot="card-location">{card['locationCopy']}</p> */}
           </my-card>
         ))}
       </my-grid>,
